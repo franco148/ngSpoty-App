@@ -9,7 +9,7 @@ export class SpotifyService {
   artists: any[] = [];
 
   urlSpotity: string = 'https://api.spotify.com/v1/';
-  tokenSpotify: string = "BQCZhG5VVNMK5dq4Cvxz9YeR7Gm8yDsw-Myv9_d2pXMVktFe7ZbSZTNz_VS3y1MUGIHTvdUArcr5Z4TEelE";
+  tokenSpotify: string = "BQDR-SEZ_Ajgq1j3H58gHnS0aBATUuJUTjk5UcPcJ73nYazaQl1dgRvYICjt-Uf1sDDr61y6TRA6sPmuSkw";
 
 
 
