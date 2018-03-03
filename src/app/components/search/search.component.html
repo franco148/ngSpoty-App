@@ -13,12 +13,20 @@
       <h1 class="text-capitalize">{{ searchTerm }}</h1>
       <hr>
 
-      <ul>
+      <!-- <ul> -->
         <!-- We are referencing to the service, because it helps not to destroy
         the reference to the result each time we change the page (SPA). -->
-        <li *ngFor="let singer of _spotify.artists">
+        <!-- <li *ngFor="let singer of _spotify.artists">
         {{ singer.name }}</li>
-      </ul>
+      </ul> -->
+
+      <div class="row">
+        <div *ngFor="let singer of _spotify.artists" class="col-md-3 text-center puntero">
+          <!-- <img [src]="singer.images[1]?.url" class="img-thumbnail"> -->
+          <img [src]="singer.images | nophoto" class="img-thumbnail">
+          <p> {{ singer.name }} </p>
+        </div>
+      </div>
     </div>
 
   </div>
