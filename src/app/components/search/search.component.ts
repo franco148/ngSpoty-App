@@ -27,10 +27,11 @@ export class SearchComponent {
 
     // This kind of implementation helps when for example
     // loading = true;
-    this._spotify.getArtists(this.searchTerm).subscribe(response => {
-      console.log(response);
-      // loading = false;
-    });
+    // this._spotify.getArtists(this.searchTerm).subscribe(response => {
+    //   console.log(response);
+    //   // loading = false;
+    // });
+    this._spotify.getArtists(this.searchTerm).subscribe();
   }
 
 }
