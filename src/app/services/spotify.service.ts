@@ -14,7 +14,7 @@ export class SpotifyService {
 
 
   constructor(public http: HttpClient) {
-    console.log('Spotify service is ready!!!');
+    //console.log('Spotify service is ready!!!');
   }
 
   getArtists(searchTerm: string) {
@@ -45,7 +45,16 @@ export class SpotifyService {
     let url = `${ this.urlSpotity }artists/${ id }`;
     let headers = this.getHeaders();
 
-    return this.http.get(url, { headers });                    
+    return this.http.get(url, { headers });
+  }
+
+  getTopTracks(id: string) {
+    //https://api.spotify.com/v1/artists/7okwEbXzyT2VffBmyQBWLz/top-tracks?country=BO
+    let url = `${ this.urlSpotity }artists/${ id }/top-tracks?country=BO`;
+    let headers = this.getHeaders();
+
+    return this.http.get(url, { headers })
+                    .map((tracksResponse: any) => tracksResponse.tracks);
   }
 
   private getHeaders() : HttpHeaders {
