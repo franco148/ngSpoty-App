@@ -1,3 +1,25 @@
-<p>
-  search works!
-</p>
+<div class="container top30">
+  <div class="row">
+
+    <div class="col-md-3">
+      <label for="searchTerm">Search Artist</label>
+      <input type="text" placeholder="Search an artist..."
+             class="form-control"
+             (keyup)="searchArtist()"
+             [(ngModel)]="searchTerm"/>
+    </div>
+
+    <div class="col-md-9" *ngIf="searchTerm">
+      <h1 class="text-capitalize">{{ searchTerm }}</h1>
+      <hr>
+
+      <ul>
+        <!-- We are referencing to the service, because it helps not to destroy
+        the reference to the result each time we change the page (SPA). -->
+        <li *ngFor="let singer of _spotify.artists">
+        {{ singer.name }}</li>
+      </ul>
+    </div>
+
+  </div>
+</div>

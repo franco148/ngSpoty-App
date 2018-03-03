@@ -1,8 +1,13 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
 
 // Routes
 import { app_routing } from './app.routes';
+
+// Services
+import { SpotifyService } from './services/spotify.service';
 
 // My Components
 import { AppComponent } from './app.component';
@@ -20,9 +25,15 @@ import { NavbarComponent } from './components/shared/navbar/navbar.component';
   ],
   imports: [
     BrowserModule,
-    app_routing
+    app_routing,
+    HttpClientModule,
+    FormsModule
   ],
-  providers: [],
+  // When you define something in providers scope, it means that this
+  // could be used in all the application.
+  providers: [
+    SpotifyService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
