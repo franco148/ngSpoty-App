@@ -12,8 +12,8 @@ export class SpotifyService {
     console.log('Spotify service is ready!!!');
   }
 
-  getArtists() {
-    let url = "https://api.spotify.com/v1/search?query=Rammstein&type=artist&offset=0&limit=20";
+  getArtists(searchTerm: string) {
+    let url = `https://api.spotify.com/v1/search?query=${ searchTerm }&type=artist&offset=0&limit=20`
     let headers = new HttpHeaders({
       'authorization': 'Bearer BQB17SC70cIaWA_zkfq4TOfVoP8cB84INUFFlstWnY6_Eyrwkuzkkz6mE5PYwKanbv_Hf4YSXkwVtdKa2o0'
     });
