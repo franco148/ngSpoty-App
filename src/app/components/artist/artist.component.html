@@ -46,10 +46,12 @@
             <td>{{ song.name }}</td>
             <td>{{ song.popularity }} %</td>
             <td>
-              <audio controls>
+              <!-- <audio controls>
                 <source [src]="song.preview_url">
                 Your browser is too old.
-              </audio>
+              </audio> -->
+              <!-- https://open.spotify.com/embed?uri=spotify:artist:7okwEbXzyT2VffBmyQBWLz&theme=white&view=coverart -->
+              <iframe [src]="song.uri | securedom:'https://open.spotify.com/embed?uri='" width="300" height="80" frameborder="0" allowtransparency="true"></iframe>
             </td>
           </tr>
         </tbody>
