@@ -21,7 +21,8 @@
       </ul> -->
 
       <div class="row">
-        <div *ngFor="let singer of _spotify.artists" class="col-md-3 text-center puntero">
+        <div *ngFor="let singer of _spotify.artists" class="col-md-3 text-center puntero"
+             [routerLink]="['/artist', singer.id]">
           <!-- <img [src]="singer.images[1]?.url" class="img-thumbnail"> -->
           <img [src]="singer.images | nophoto" class="img-thumbnail">
           <p> {{ singer.name }} </p>
