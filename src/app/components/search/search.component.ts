@@ -14,8 +14,12 @@ import { SpotifyService } from '../../services/spotify.service';
 export class SearchComponent {
 
   constructor(public _spotify: SpotifyService) {
+
+    // This kind of implementation helps when for example
+    // loading = true;
     this._spotify.getArtists().subscribe(response => {
       console.log(response);
+      // loading = false;
     });
   }
 

@@ -1,11 +1,12 @@
 import { Injectable } from '@angular/core';
 
 import { HttpClient, HttpHeaders } from '@angular/common/http';
+import 'rxjs/add/operator/map';
 
 @Injectable()
 export class SpotifyService {
 
-  artists: any[];
+  artists: any[] = [];
 
   constructor(public http: HttpClient) {
     console.log('Spotify service is ready!!!');
@@ -28,6 +29,11 @@ export class SpotifyService {
     //   console.log(data);
     // });
 
-    return this.http.get(url, { headers });
+    // .map is going to help us extracting the required data for our component.
+    return this.http.get(url, { headers })
+                    .map( (data : any) => {
+                      this.artists = data.artists.items;
+                      return this.artists;
+                    });
   }
 }
